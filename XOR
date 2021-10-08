@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class GATE {
+public:
+    int AND (int P, int Q) {
+    int result;
+    if (P == 0 && Q == 0) result = 0;
+    else if(P == 0 && Q == 1) result - 0;
+    else if (P == 1 && Q == 0) result = 0;
+    else result = 1;
+    
+    return result;
+}
+
+
+int OR(int P, int Q) {
+    int result;
+    if (P == 0 && Q == 0) result = 0;
+    else if (P == 0 && Q == 1) result = 1;
+    else if (P == 1 && Q == 0) result = 1;
+    else result = 1;
+    
+    return result;
+}
+
+int Negation(int P){
+    int result;
+    if (P == 0) result = 1;
+    else result = 0;
+    return result;
+}
+
+};
+
+
+class Half_Adder{
+public:
+    int Sum (int p, int q) {
+    int result;
+    GATE gate;
+    return result = gate.AND (gate.OR (p, q), gate.Negation(gate.AND(p, q)));
+    }
+    int Carry (int p, int q) {
+    int result;
+    GATE gate;
+
+    return result = gate.AND(p, q);
+    }
+};
+int main()
+{
+    GATE gate;
+    Half_Adder HA;
+    
+    cout << "And Gate => (1,0) = "<< gate.AND(1, 0) << endl;
+    cout << "OR Gate => (1,0) = " << gate.OR (1, 0) << endl;
+    cout << "Negation Gate =>(1) = " << gate.Negation (1) << endl;
+    cout << "Sum of Half Adder => (1,0) = " << HA.Sum(1, 0) << endl;
+    cout << "Carry of Half Adder => (1, 0) = " << HA.Carry(1, 0) << endl;
+}
