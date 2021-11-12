@@ -4,20 +4,11 @@
 using namespace std;
 
 
-
-
-
-
-
-
-
 class Team {
 public:
     
     string name;
-    
-
-    
+       
 };
 
 int main()
